@@ -1,6 +1,9 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    id("kotlin-kapt")
+    id("com.google.dagger.hilt.android")
+    alias(libs.plugins.google.gms.google.services)
 }
 
 android {
@@ -59,6 +62,18 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+
+    // MVVM dependency
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.4.0-alpha01")
+
+    // Dagger-Hilt
+    implementation("com.google.dagger:hilt-android:2.46.1")
+    implementation(libs.firebase.auth)
+    kapt("com.google.dagger:hilt-compiler:2.46.1")
+
+    // navigation
+    implementation("androidx.navigation:navigation-compose:2.4.0-alpha01")
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -66,4 +81,8 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+}
+
+kapt {
+    correctErrorTypes = true
 }
