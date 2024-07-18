@@ -64,15 +64,21 @@ dependencies {
     implementation(libs.androidx.material3)
 
     // MVVM dependency
-    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.4.0-alpha01")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.1")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.3")
 
     // Dagger-Hilt
     implementation("com.google.dagger:hilt-android:2.46.1")
-    implementation(libs.firebase.auth)
     kapt("com.google.dagger:hilt-compiler:2.46.1")
+    kapt("androidx.hilt:hilt-compiler:1.2.0")
+    implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
 
     // navigation
-    implementation("androidx.navigation:navigation-compose:2.4.0-alpha01")
+    implementation("androidx.navigation:navigation-compose:2.6.0-beta01")
+
+    // Firebase
+    implementation("com.google.firebase:firebase-auth-ktx:23.0.0")
+
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
