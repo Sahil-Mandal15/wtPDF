@@ -12,9 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.WtPDF"
-        tools:targetApi="31">
+        tools:targetApi="34">
         <activity
-            android:name=".BaseApp"
+            android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.WtPDF">
